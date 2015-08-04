@@ -1,9 +1,6 @@
-var level1code = require('./level1code.js');
-var level1tests = require('../../test/js/level1tests.js');
-var level2code = require('./level2code.js');
-var level2tests = require('../../test/js/level2tests.js');
-var level3code = require('./level3code.js');
-var level3tests = require('../../test/js/level3tests.js');
+import level3code from './level3code';
+import level3tests from './level3tests';
+
 function Program() {
 
     function test(t, name) {
@@ -17,7 +14,7 @@ function Program() {
 
     function run(tests) {
         var names = Object.getOwnPropertyNames(tests);
-        names.forEach(function (name, i) {
+        names.forEach((name, i) => {
             if (/Test$/.test(name)) {
                 test(tests[name].bind(tests), name);
             }
@@ -27,8 +24,6 @@ function Program() {
     function main() {
         console.log("\nJavaScript Tests:");
 
-        run(level1tests);
-        run(level2tests);
         run(level3tests);
 
         console.log("Done!");

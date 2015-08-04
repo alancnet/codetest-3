@@ -26,5 +26,25 @@ object Level3Code {
   // The only valid values are 1-9
   // The more elegant the approach the better
   def solveSudoku(sudokuBoard: Array[Int]): Array[Int] = ???
-  
+
+  // Little Alchemy https://littlealchemy.com/
+  //
+  // Little Alchemy is a game where you combine elements to create other elements. For example,
+  // earth + fire = lava; lava + earth = volcano.
+  // Sometimes, combining two elements results in two or more elements. For example,
+  // bird + rainbow = peacock, toucan; zombie + human = zombie, zombie.
+  // You start with 4 base elements: earth, air, fire, water.
+  //
+  // The goal of this task is to produce a list of all possible elements that can be created by combining
+  // two elements. Focus on calling combine() the fewest times possible.
+  // There are 540 possible elements, but your code doesn't know that.
+  // You are not allowed to access the Little Alchemy or Recipes libraries directly.
+  //
+  // baseElements: An array of earth, air, fire, water.
+  // combine(element1, element2): Returns an array of elements resulting from combination.
+  // Example: combine("earth", "fire") = ["lava"]
+  // Example: combine("bird", "rainbow") = ["peacock", "toucan"]
+  // Example: combine("peacock", "lava") = []
+  def deriveAllElements(baseElements:Array[String], combine:(String, String)=>Array[String]):Array[String] = ???
+
 }

@@ -1,6 +1,5 @@
-
 object Level3Tests {
-  
+
   @Rank(1)
   def monkeysAndCoconutsTest() = {
     val sailors = 5
@@ -8,7 +7,7 @@ object Level3Tests {
     val expectedCoconuts = 3121
     Assert.areEqual(expectedCoconuts, actualCoconuts)
   }
-  
+
   @Rank(2)
   def solveSudokuTest() = {
     def sudokuToString(board: Array[Int]): String = {
@@ -95,6 +94,22 @@ object Level3Tests {
       9, 0, 0, 0, 0, 0, 0, 0, 2,
       0, 8, 0, 9, 0, 1, 0, 6, 0,
       0, 1, 0, 4, 3, 6, 0, 5, 0), doesBoardSolve)
+  }
+
+  @Rank(3)
+  def deriveAllElementsTest ={
+    val la = LittleAlchemy;
+    val recipes = Recipes;
+    val baseElements = la.getBaseElements
+    val allElements = recipes.byElement.map(x=>x._1).toArray
+    var callCount = 0;
+    var result = Level3Code.deriveAllElements(baseElements, (e1, e2) => {
+      callCount = callCount + 1
+      la.combine(e1, e2);
+    })
+    Assert.areEqual(allElements.length, result.length);
+    Assert.areEqual(allElements.sorted.mkString(","), result.sorted.mkString(","))
+    println(callCount.toString + " calls to combine().");
   }
 
 }

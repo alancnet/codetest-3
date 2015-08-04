@@ -15,7 +15,7 @@ object Main {
 
     println("\nScala Tests:");
 
-    val tests = Array(Level1Tests, Level2Tests, Level3Tests)
+    val tests = Array(Level3Tests)
 
     tests.foreach { o =>
       o
@@ -38,5 +38,3 @@ object Main {
     println("Done!");
   }
 }
-
-
